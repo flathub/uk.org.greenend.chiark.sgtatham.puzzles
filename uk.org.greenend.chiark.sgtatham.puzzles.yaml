@@ -51,8 +51,8 @@ modules:
       - install -Dm644 uk.org.greenend.chiark.sgtatham.puzzles.mosaic.desktop ${FLATPAK_DEST}/share/applications/uk.org.greenend.chiark.sgtatham.puzzles.desktop
     sources:
       - type: git
-        url: https://git.tartarus.org/simon/puzzles.git
-        commit: d505f08f671c2f0a3fdd0b7d733e4ce987aa4786
+        url: https://github.com/kohend/simon-puzzles.git
+        commit: fe41190cde599e45405c9c9a2f8543c3b45bdbdc
       - type: patch
         path: desktop.patch
       - type: file
