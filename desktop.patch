@@ -1,49 +1,32 @@
-diff -ur ../puzzles-20230313.adf2a09/cmake/platforms/unix.cmake ./cmake/platforms/unix.cmake
---- ../puzzles-20230313.adf2a09/cmake/platforms/unix.cmake	2023-03-13 03:30:02.000000000 +0200
-+++ ./cmake/platforms/unix.cmake	2023-03-19 23:36:58.932379628 +0200
-@@ -109,10 +109,12 @@
+--- unix.cmake	2025-01-22 12:59:52.050127544 +0700
++++ ./cmake/platforms/unix.cmake	2025-01-22 15:12:22.388879851 +0700
+@@ -109,15 +109,15 @@
        # CMAKE_INSTALL_BINDIR.
        install(TARGETS ${TARGET})
      endif()
 -    configure_file(${CMAKE_SOURCE_DIR}/puzzle.desktop.in ${binary_name}.desktop)
 +    configure_file(${CMAKE_SOURCE_DIR}/puzzle.desktop.in uk.org.greenend.chiark.sgtatham.puzzles.${binary_name}.desktop)
-     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/icons/${NAME}-48d24.png
--      DESTINATION share/pixmaps OPTIONAL RENAME ${binary_name}-48d24.png)
+     foreach(icon_size ${all_icon_sizes})
+       install(
+         FILES ${CMAKE_CURRENT_BINARY_DIR}/icons/${NAME}-${icon_size}d24.png
+         DESTINATION share/icons/hicolor/${icon_size}x${icon_size}/apps
+         OPTIONAL
+-        RENAME ${binary_name}.png)
++        RENAME uk.org.greenend.chiark.sgtatham.puzzles.${binary_name}.png)
+     endforeach()
 -    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${binary_name}.desktop
-+      DESTINATION share/pixmaps OPTIONAL RENAME uk.org.greenend.chiark.sgtatham.puzzles.${binary_name}-48d24.png)
-+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/icons/${NAME}-96d24.png
-+      DESTINATION share/icons/hicolor/96x96/apps/ OPTIONAL RENAME uk.org.greenend.chiark.sgtatham.puzzles.${binary_name}.png)
 +    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/uk.org.greenend.chiark.sgtatham.puzzles.${binary_name}.desktop
        DESTINATION share/applications)
    endif()
  endfunction()
-diff -ur ../puzzles-20230313.adf2a09/puzzle.desktop.in ./puzzle.desktop.in
---- ../puzzles-20230313.adf2a09/puzzle.desktop.in	2023-03-13 03:30:02.000000000 +0200
-+++ ./puzzle.desktop.in	2023-03-19 23:25:30.809299623 +0200
+--- puzzle.desktop.in	2025-01-22 12:59:52.067127580 +0700
++++ ./puzzle.desktop.in	2025-01-22 15:21:24.837795300 +0700
 @@ -4,7 +4,7 @@
  Name=${displayname}
  Comment=${description}
  Exec=${binary_name}
--Icon=${binary_name}-48d24
+-Icon=${binary_name}
 +Icon=uk.org.greenend.chiark.sgtatham.puzzles.${binary_name}
  StartupNotify=false
  Categories=Game;LogicGame;
  Terminal=false
-diff -ur ../puzzles-20230313.adf2a09/icons/icons.cmake ./icons/icons.cmake
---- ../puzzles-20230313.adf2a09/icons/icons.cmake
-+++ ./icons/icons.cmake
-@@ -81,12 +81,13 @@ set(untangle_crop 320x320 164x164+3+116)
- add_custom_target(icons)
- 
- # All sizes of icon we make for any purpose.
--set(all_icon_sizes 96 88 48 44 32 16)
-+set(all_icon_sizes 128 96 88 48 44 32 16)
- 
- # Sizes of icon we put into the Windows .ico files.
- set(win_icon_sizes 48 32 16)
- 
- # Border thickness for each icon size.
-+set(border_128 6)
- set(border_96 4)
- set(border_88 4)
- set(border_48 4)

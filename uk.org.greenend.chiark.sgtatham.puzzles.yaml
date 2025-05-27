@@ -1,6 +1,6 @@
-app-id: uk.org.greenend.chiark.sgtatham.puzzles 
+app-id: uk.org.greenend.chiark.sgtatham.puzzles
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: mosaic
 finish-args:
@@ -37,8 +37,8 @@ modules:
       - --with-openjp2
     sources:
       - type: archive
-        url: https://github.com/ImageMagick/ImageMagick6/archive/6.9.10-23.tar.gz
-        sha256: 2a0b11952c994b06562dace16a53c01bdd0f715de59483145eb3053902a42361
+        url: https://github.com/ImageMagick/ImageMagick6/archive/6.9.13-21.tar.gz
+        sha256: 36a7205c73db9107acec5bb7594e3afbde3cc08a89f0a22a15eead387244fa05
     # We need it only for the build stage
     cleanup:
       - '*'
@@ -52,7 +52,7 @@ modules:
     sources:
       - type: git
         url: https://git.tartarus.org/simon/puzzles.git
-        commit: d505f08f671c2f0a3fdd0b7d733e4ce987aa4786
+        commit: 7fa03051562ee81e2a5371f8b3a6d0bb6e646aa0
       - type: patch
         path: desktop.patch
       - type: file

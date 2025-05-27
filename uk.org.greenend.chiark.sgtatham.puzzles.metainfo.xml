@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>uk.org.greenend.chiark.sgtatham.puzzles</id>
   <project_license>MIT</project_license>
   <metadata_license>MIT</metadata_license>
   <name>Simon Tatham's Portable Puzzle Collection</name>
   <summary>Puzzle game collection</summary>
+  <developer id="uk.org.greenend.chiark.sgtatham">
+  	<name>Simon Tatham</name>
+  </developer>
+  <launchable type="desktop-id">uk.org.greenend.chiark.sgtatham.puzzles.desktop</launchable>
   <description>
     <p>Simon Tatham's Portable Puzzle Collection contains a number of popular puzzle games for a single player.  It currently consists of these games:.</p>
     <ul>
@@ -67,7 +71,7 @@
     <category>LogicGame</category>
   </categories>
   <releases>
-    <release version="20230408" date="2023-04-08" />
+    <release version="20241229" date="2024-12-29" />
   </releases>
   <requires>
     <internet>offline-only</internet>
