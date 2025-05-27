@@ -52,7 +52,7 @@ modules:
     sources:
       - type: git
         url: https://git.tartarus.org/simon/puzzles.git
-        commit: 79be403101d055d2fde3611a5f133135d4094ee9
+        commit: 7fa03051562ee81e2a5371f8b3a6d0bb6e646aa0
       - type: patch
         path: desktop.patch
       - type: file
