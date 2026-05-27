@@ -51,7 +51,9 @@
       <li>Untangle, planar graph layout puzzle</li>
     </ul>
   </description>
-  <url type="homepage">https://www.chiark.greenend.org.uk/~sgtatham/puzzles/</url>
+  <url type="homepage">https://www.chiark.greenend.org.uk/~sgtatham/puzzles</url>
+  <url type="bugtracker">https://www.chiark.greenend.org.uk/~sgtatham/puzzles/issues</url>
+  <url type="vcs-browser">https://www.chiark.greenend.org.uk/~sgtatham/puzzles</url>
   <screenshots>
     <screenshot type="default">
       <caption>Mosaic simple game</caption>
